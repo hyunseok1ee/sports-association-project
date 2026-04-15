@@ -15,8 +15,8 @@ export class NpsaHeroBanner extends DDDSuper(LitElement) {
         text-align: center;
       }
       .logo {
-        height: 300px;
-        margin-bottom: var(--ddd-spacing-6);
+        height: 400px;
+        margin-bottom: var(--ddd-spacing-4);
       }
       h1 {
         color: var(--ddd-theme-default-nittanyNavy);
@@ -37,10 +37,10 @@ export class NpsaHeroBanner extends DDDSuper(LitElement) {
 
   render() {
     return html`
-      <img class="logo" src="assets/npsa.png" alt="NPSA Logo" />
+      <img class="logo" src="https://raw.githubusercontent.com/hyunseok1ee/sports-association-project/main/assets/npsa.png" alt="NPSA Logo" />
       <h1>National Pencil Sharpening Association</h1>
       <p>
-        We are dedicated to the art and science of pencil sharpening.
+        We are dedicated to the art and science of pencil sharpening
         Join our community of passionate sharpeners from across the nation
         and discover the perfect edge.
       </p>

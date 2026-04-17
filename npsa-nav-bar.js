@@ -41,7 +41,7 @@ export class NpsaNavBar extends DDDSuper(LitElement) {
   render() {
     return html`
       <div class="nav-wrapper">
-        <img class="logo" src="https://raw.githubusercontent.com/hyunseok1ee/sports-association-project/main/assets/npsa.png"alt="NPSA Logo" />
+        <img class="logo" src="https://raw.githubusercontent.com/hyunseok1ee/sports-association-project/main/assets/npsa.png" alt="NPSA Logo" />
         <nav class="nav-links">
           <a href="/">Home</a>
           <a href="/about">About</a>

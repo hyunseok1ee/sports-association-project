@@ -1,0 +1,130 @@
+{
+  "id": "menu-main-nav",
+  "title": "NPSA Main Navigation",
+  "author": "npsa",
+  "description": "Main navigation menu for the NPSA site",
+  "metadata": {},
+  "items": [
+    {
+      "id": "item-1",
+      "indent": "1",
+      "location": "/",
+      "slug": "home",
+      "order": "0",
+      "parent": null,
+      "title": "Home",
+      "description": "",
+      "metadata": {}
+    },
+    {
+      "id": "item-2",
+      "indent": "1",
+      "location": "/about",
+      "slug": "about",
+      "order": "1",
+      "parent": null,
+      "title": "About",
+      "description": "",
+      "metadata": {}
+    },
+    {
+      "id": "item-3",
+      "indent": "1",
+      "location": null,
+      "slug": "teams",
+      "order": "2",
+      "parent": null,
+      "title": "Teams",
+      "description": "",
+      "metadata": {}
+    },
+    {
+      "id": "item-4",
+      "indent": "2",
+      "location": "/teams/team-a.full",
+      "slug": "team-a",
+      "order": "0",
+      "parent": "item-3",
+      "title": "Team A",
+      "description": "",
+      "metadata": {}
+    },
+    {
+      "id": "item-5",
+      "indent": "2",
+      "location": "/teams/team-b.js",
+      "slug": "team-b",
+      "order": "1",
+      "parent": "item-3",
+      "title": "Team B",
+      "description": "",
+      "metadata": {}
+    },
+    {
+      "id": "item-6",
+      "indent": "2",
+      "location": "/teams/team-c.js",
+      "slug": "team-c",
+      "order": "2",
+      "parent": "item-3",
+      "title": "Team C",
+      "description": "",
+      "metadata": {}
+    },
+    {
+      "id": "item-7",
+      "indent": "1",
+      "location": null,
+      "slug": "schedule",
+      "order": "3",
+      "parent": null,
+      "title": "Schedule",
+      "description": "",
+      "metadata": {}
+    },
+    {
+      "id": "item-8",
+      "indent": "2",
+      "location": "/schedule/full.js",
+      "slug": "schedule-full",
+      "order": "0",
+      "parent": "item-7",
+      "title": "Full",
+      "description": "",
+      "metadata": {}
+    },
+    {
+      "id": "item-9",
+      "indent": "2",
+      "location": "/schedule/full.js",
+      "slug": "schedule-games",
+      "order": "1",
+      "parent": "item-7",
+      "title": "Games",
+      "description": "",
+      "metadata": {}
+    },
+    {
+      "id": "item-10",
+      "indent": "2",
+      "location": "/schedule/full.js",
+      "slug": "schedule-practice",
+      "order": "2",
+      "parent": "item-7",
+      "title": "Practice",
+      "description": "",
+      "metadata": {}
+    },
+    {
+      "id": "item-11",
+      "indent": "1",
+      "location": "/join.js",
+      "slug": "join",
+      "order": "4",
+      "parent": null,
+      "title": "Join",
+      "description": "",
+      "metadata": {}
+    }
+  ]
+}

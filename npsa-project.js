@@ -17,15 +17,15 @@ import './npsa-team-card.js';
 import './npsa-footer.js';
 
 /**
- * `sports-association-project`
+ * `npsa-project`
  * 
  * @demo index.html
- * @element sports-association-project
+ * @element npsa-project
  */
-export class SportsAssociationProject extends DDDSuper(I18NMixin(LitElement)) {
+export class NpsaProject extends DDDSuper(I18NMixin(LitElement)) {
 
   static get tag() {
-    return "sports-association-project";
+    return "npsa-project";
   }
 
   constructor() {
@@ -36,6 +36,7 @@ export class SportsAssociationProject extends DDDSuper(I18NMixin(LitElement)) {
       ...this.t,
       title: "Title",
     };
+    this.page = 'home';
   }
 
   // Lit reactive properties
@@ -43,6 +44,7 @@ export class SportsAssociationProject extends DDDSuper(I18NMixin(LitElement)) {
     return {
       ...super.properties,
       title: { type: String },
+      page: { type: String },
     };
   }
 
@@ -66,14 +68,34 @@ export class SportsAssociationProject extends DDDSuper(I18NMixin(LitElement)) {
     `];
   }
 
-  // Lit render the HTML
-  render() {
-    return html`
-      <div class="wrapper">
-        <h3><span>${this.t.title}:</span> ${this.title}</h3>
-        <slot></slot>
-      </div>`;
+  _renderPage() {
+  switch(this.page) {
+    case 'home': return html`<npsa-hero-banner></npsa-hero-banner>`;
+    case 'schedule-full': return html`<npsa-schedule-card></npsa-schedule-card>`;
+    case 'schedule-games': return html`<npsa-schedule-card></npsa-schedule-card>`;
+    case 'schedule-practice': return html`<npsa-schedule-card></npsa-schedule-card>`;
+    case 'team-a': return html`<npsa-team-card team="a"></npsa-team-card>`;
+    case 'team-b': return html`<npsa-team-card team="b"></npsa-team-card>`;
+    case 'team-c': return html`<npsa-team-card team="c"></npsa-team-card>`;
+    case 'join': return html`<npsa-join></npsa-join>`;
+    default: return html`<npsa-hero-banner></npsa-hero-banner>`;
   }
 }
 
-globalThis.customElements.define(SportsAssociationProject.tag, SportsAssociationProject);
+  // Lit render the HTML
+  render() {
+    return html`
+      <npsa-nav-bar @nav-changed=${(e) => this.page = e.detail.slug}></npsa-nav-bar>
+      <main>
+        ${this._renderPage()}
+        <npsa-stat-counter></npsa-stat-counter>
+        <npsa-about-band></npsa-about-band>
+        <npsa-news-card></npsa-news-card>
+      </main>
+      <npsa-footer></npsa-footer>
+    `;
+  }
+
+}
+
+globalThis.customElements.define(NpsaProject.tag, NpsaProject);

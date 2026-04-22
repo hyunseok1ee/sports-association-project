@@ -41,6 +41,15 @@ export class NpsaNavBar extends DDDSuper(LitElement) {
     this.openMenu = this.openMenu === name ? null : name;
   }
 
+  _navigate(slug) {
+    this.dispatchEvent(new CustomEvent('nav-changed', {
+      detail: { slug },
+      bubbles: true,
+      composed: true
+    }));
+    this.openMenu = null;
+  }
+
   static get styles() {
     return [super.styles, css`
       :host {
@@ -146,9 +155,9 @@ export class NpsaNavBar extends DDDSuper(LitElement) {
               Teams <span class="arrow ${this.openMenu === "teams" ? "open" : ""}">▼</span>
             </button>
             <div class="dropdown-menu ${this.openMenu === "teams" ? "open" : ""}">
-              <a href="/teams/soccer">Team A</a>
-              <a href="/teams/basketball">Team B</a>
-              <a href="/teams/baseball">Team C</a>
+              <a @click=${() => this._navigate('team-a')}>Team A</a>
+              <a @click=${() => this._navigate('team-b')}>Team B</a>
+              <a @click=${() => this._navigate('team-c')}>Team C</a>
             </div>
           </div>
 
@@ -157,9 +166,9 @@ export class NpsaNavBar extends DDDSuper(LitElement) {
               Schedule <span class="arrow ${this.openMenu === "schedule" ? "open" : ""}">▼</span>
             </button>
             <div class="dropdown-menu ${this.openMenu === "schedule" ? "open" : ""}">
-              <a href="/schedule/upcoming">Full</a>
-              <a href="/schedule/results">Games</a>
-              <a href="/schedule/standings">Practice</a>
+              <a @click=${() => this._navigate('schedule-full')}>Full</a>
+              <a @click=${() => this._navigate('schedule-games')}>Games</a>
+              <a @click=${() => this._navigate('schedule-practice')}>Practice</a>
             </div>
           </div>
 

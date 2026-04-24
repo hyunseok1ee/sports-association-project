@@ -85,7 +85,7 @@
     {
       "id": "item-8",
       "indent": "2",
-      "location": "npsa-schedule-card.js",
+      "location": "npsa-schedule-band.js",
       "slug": "schedule-full",
       "order": "0",
       "parent": "item-7",
@@ -96,7 +96,7 @@
     {
       "id": "item-9",
       "indent": "2",
-      "location": "npsa-schedule-card.js",
+      "location": "npsa-schedule-band.js",
       "slug": "schedule-games",
       "order": "1",
       "parent": "item-7",
@@ -107,7 +107,7 @@
     {
       "id": "item-10",
       "indent": "2",
-      "location": "npsa-schedule-card.js",
+      "location": "npsa-schedule-band.js",
       "slug": "schedule-practice",
       "order": "2",
       "parent": "item-7",

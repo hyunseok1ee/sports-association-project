@@ -71,9 +71,9 @@ export class NpsaProject extends DDDSuper(I18NMixin(LitElement)) {
   _renderPage() {
   switch(this.page) {
     case 'home': return html`<npsa-hero-banner></npsa-hero-banner>`;
-    case 'schedule-full': return html`<npsa-schedule-card></npsa-schedule-card>`;
-    case 'schedule-games': return html`<npsa-schedule-card></npsa-schedule-card>`;
-    case 'schedule-practice': return html`<npsa-schedule-card></npsa-schedule-card>`;
+    case 'schedule-full': return html`<npsa-schedule-band></npsa-schedule-band>`;
+    case 'schedule-games': return html`<npsa-schedule-band></npsa-schedule-band>`;
+    case 'schedule-practice': return html`<npsa-schedule-band></npsa-schedule-band>`;
     case 'team-a': return html`<npsa-team-card team="a"></npsa-team-card>`;
     case 'team-b': return html`<npsa-team-card team="b"></npsa-team-card>`;
     case 'team-c': return html`<npsa-team-card team="c"></npsa-team-card>`;

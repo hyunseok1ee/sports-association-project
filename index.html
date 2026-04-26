@@ -1,14 +1,49 @@
 <!doctype html>
 <html lang="en">
-
 <head>
   <base href="/">
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
-    <title>NPSA - National Pencil Sharpening Association</title>
-    <script type="module" src="npsa-project.js"></script>
-  </head>
-  <body>
-    <npsa-project></npsa-project>
-  </body>
+  <title>NPSA - National Pencil Sharpening Association</title>
+</head>
+<body>
+  <npsa-nav-bar></npsa-nav-bar>
+  <main id="app"></main>
+  <npsa-footer></npsa-footer>
+
+  <script type="module">
+    import './npsa-project.js';
+
+    window.router = function(slug) {
+      const app = document.getElementById('app');
+      
+      if (!slug) {
+        slug = window.location.pathname.replace('/', '');
+      }
+
+      if (slug === '' || slug === 'index.html') {
+        app.innerHTML = `
+          <npsa-hero-banner></npsa-hero-banner>
+          <npsa-stat-counter></npsa-stat-counter>
+          <npsa-about-band></npsa-about-band>
+          <npsa-news-card></npsa-news-card>
+        `;
+      } else if (slug === 'team-a') {
+        app.innerHTML = `<npsa-team-card></npsa-team-card>`;
+      } else if (slug === 'about') {
+        app.innerHTML = `<npsa-about-band></npsa-about-band>`;
+      } else if (slug === 'schedule-full') {
+        app.innerHTML = `<npsa-schedule-band></npsa-schedule-band>`;
+      } else if (slug === 'join') {
+        app.innerHTML = `<npsa-news-card></npsa-news-card>`;
+      }
+    }
+
+    document.addEventListener('nav-changed', (e) => {
+      window.router(e.detail.slug);
+    });
+
+    window.router();
+  </script>
+</body>
 </html>

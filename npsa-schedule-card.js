@@ -11,6 +11,7 @@ export class NpsaScheduleCard extends DDDSuper(LitElement) {
       ...super.properties,
       day: { type: Number },
       isCurrentMonth: { type: Boolean },
+      events: { type: Array },
     };
   }
 
@@ -18,6 +19,7 @@ export class NpsaScheduleCard extends DDDSuper(LitElement) {
     super();
     this.day = 0;
     this.isCurrentMonth = true;
+    this.events = [];
   }
 
   static get styles() {
@@ -25,7 +27,6 @@ export class NpsaScheduleCard extends DDDSuper(LitElement) {
       :host {
         display: block;
       }
-
       .card {
         background-color: white;
         min-height: 100px;
@@ -33,7 +34,6 @@ export class NpsaScheduleCard extends DDDSuper(LitElement) {
         box-sizing: border-box;
         position: relative;
       }
-
       .day-number {
         font-family: var(--ddd-font-navigation);
         font-size: var(--ddd-font-size-m);
@@ -41,9 +41,23 @@ export class NpsaScheduleCard extends DDDSuper(LitElement) {
         color: var(--ddd-theme-default-nittanyNavy);
         line-height: 1;
       }
-
       .card.other-month .day-number {
         opacity: 0.5;
+      }
+      .event {
+        margin-top: var(--ddd-spacing-1);
+        padding: 2px 4px;
+        border-radius: 4px;
+        font-family: var(--ddd-font-navigation);
+        font-size: 10px;
+        font-weight: bold;
+        color: white;
+      }
+      .event.game {
+        background-color: var(--ddd-theme-default-nittanyNavy);
+      }
+      .event.practice {
+        background-color: var(--ddd-theme-default-original87Pink);
       }
     `];
   }
@@ -56,6 +70,11 @@ export class NpsaScheduleCard extends DDDSuper(LitElement) {
     return html`
       <div class="card ${!this.isCurrentMonth ? "other-month" : ""}">
         <span class="day-number">${this.day}</span>
+        ${this.events.map(event => html`
+          <div class="event ${event.type}">
+            ${event.type === 'game' ? `${event.home} vs ${event.away}` : 'Practice'}
+          </div>
+        `)}
       </div>
     `;
   }

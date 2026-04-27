@@ -114,7 +114,7 @@ export class NpsaNavBar extends DDDSuper(LitElement) {
         background-color: var(--ddd-theme-default-keystoneYellow);
         border-top: 3px solid var(--ddd-theme-default-nittanyNavy);
         min-width: 160px;
-        box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+        box-shadow: 0 4px 12px var(--ddd-theme-default-limestoneLight);
         z-index: 100;
         flex-direction: column;
       }
@@ -125,7 +125,7 @@ export class NpsaNavBar extends DDDSuper(LitElement) {
         padding: var(--ddd-spacing-3) var(--ddd-spacing-5);
         font-size: var(--ddd-font-size-m);
         white-space: nowrap;
-        border-bottom: 1px solid rgba(0,0,0,0.08);
+        border-bottom: 1px solid var(--ddd-theme-default-limestoneLight);
       }
       .dropdown-menu a:last-child {
         border-bottom: none;
@@ -142,17 +142,17 @@ export class NpsaNavBar extends DDDSuper(LitElement) {
       <div class="nav-wrapper">
         <img class="logo" src="https://raw.githubusercontent.com/hyunseok1ee/sports-association-project/main/assets/npsa.png" alt="NPSA Logo" />
         <nav class="nav-links">
-          <a @click=${() => this._navigate('')}>Home</a>
-          <a @click=${() => this._navigate('about')}>About</a>
+          <a href="#" @click=${() => this._navigate('')}>Home</a>
+          <a href="#" @click=${() => this._navigate('about')}>About</a>
 
           <div class="dropdown">
             <button class="dropdown-trigger" @click=${() => this._toggleMenu("teams")}>
               Teams <span class="arrow ${this.openMenu === "teams" ? "open" : ""}">▼</span>
             </button>
             <div class="dropdown-menu ${this.openMenu === "teams" ? "open" : ""}">
-              <a @click=${() => this._navigate('team-a')}>Team A</a>
-              <a @click=${() => this._navigate('team-b')}>Team B</a>
-              <a @click=${() => this._navigate('team-c')}>Team C</a>
+              <a href="#" @click=${() => this._navigate('team-a')}>Team A</a>
+              <a href="#" @click=${() => this._navigate('team-b')}>Team B</a>
+              <a href="#" @click=${() => this._navigate('team-c')}>Team C</a>
             </div>
           </div>
 
@@ -161,13 +161,13 @@ export class NpsaNavBar extends DDDSuper(LitElement) {
               Schedule <span class="arrow ${this.openMenu === "schedule" ? "open" : ""}">▼</span>
             </button>
             <div class="dropdown-menu ${this.openMenu === "schedule" ? "open" : ""}">
-              <a @click=${() => this._navigate('schedule-full')}>Full</a>
-              <a @click=${() => this._navigate('schedule-games')}>Games</a>
-              <a @click=${() => this._navigate('schedule-practice')}>Practice</a>
+              <a href="#" @click=${() => this._navigate('schedule-full')}>Full</a>
+              <a href="#" @click=${() => this._navigate('schedule-games')}>Games</a>
+              <a href="#" @click=${() => this._navigate('schedule-practice')}>Practice</a>
             </div>
           </div>
 
-          <a @click=${() => this._navigate('join')}>Join</a>
+          <a href="#" @click=${() => this._navigate('join')}>Join</a>
         </nav>
       </div>
     `;

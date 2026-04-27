@@ -1,0 +1,60 @@
+{
+  "items": [
+    {
+      "id": "game-1",
+      "date": "2026-05-01",
+      "home": "Team A",
+      "away": "Team B",
+      "location": "Graphite Hall Arena",
+      "type": "game"
+    },
+    {
+      "id": "game-2",
+      "date": "2026-05-08",
+      "home": "Team A",
+      "away": "Team C",
+      "location": "The Sharpening Dome",
+      "type": "game"
+    },
+    {
+      "id": "game-3",
+      "date": "2026-05-15",
+      "home": "Team B",
+      "away": "Team C",
+      "location": "Pencil Point Stadium",
+      "type": "game"
+    },
+    {
+      "id": "game-4",
+      "date": "2026-05-22",
+      "home": "Team A",
+      "away": "Team B",
+      "location": "Graphite Hall Arena",
+      "type": "game"
+    },
+    {
+      "id": "practice-1",
+      "date": "2026-05-03",
+      "home": null,
+      "away": null,
+      "location": "NPSA Training Center",
+      "type": "practice"
+    },
+    {
+      "id": "practice-2",
+      "date": "2026-05-10",
+      "home": null,
+      "away": null,
+      "location": "NPSA Training Center",
+      "type": "practice"
+    },
+    {
+      "id": "practice-3",
+      "date": "2026-05-17",
+      "home": null,
+      "away": null,
+      "location": "The Sharpening Dome",
+      "type": "practice"
+    }
+  ]
+}

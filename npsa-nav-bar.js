@@ -9,7 +9,7 @@ export class NpsaNavBar extends DDDSuper(LitElement) {
   static get properties() {
     return {
       ...super.properties,
-      openMenu: { type: String }, // tracks which menu is open
+      openMenu: { type: String },
     };
   }
 
@@ -19,13 +19,11 @@ export class NpsaNavBar extends DDDSuper(LitElement) {
     this._handleOutsideClick = this._handleOutsideClick.bind(this);
   }
 
-  // Adds event listener to detect clicks outside of dropdowns to close them
   connectedCallback() {
     super.connectedCallback();
     document.addEventListener("click", this._handleOutsideClick);
   }
 
-  // Closes dropdowns when clicking outside of dropdown
   disconnectedCallback() {
     super.disconnectedCallback();
     document.removeEventListener("click", this._handleOutsideClick);
@@ -76,15 +74,14 @@ export class NpsaNavBar extends DDDSuper(LitElement) {
         font-family: var(--ddd-font-navigation);
         font-size: var(--ddd-font-size-l);
         font-weight: bold;
+        cursor: pointer;
       }
       a:hover {
         color: var(--ddd-theme-default-original87Pink);
       }
-
       .dropdown {
         position: relative;
       }
-
       .dropdown-trigger {
         background: none;
         border: none;
@@ -101,7 +98,6 @@ export class NpsaNavBar extends DDDSuper(LitElement) {
       .dropdown-trigger:hover {
         color: var(--ddd-theme-default-original87Pink);
       }
-
       .arrow {
         font-size: 0.6em;
         transition: transform 0.2s ease;
@@ -110,7 +106,6 @@ export class NpsaNavBar extends DDDSuper(LitElement) {
       .arrow.open {
         transform: rotate(180deg);
       }
-
       .dropdown-menu {
         display: none;
         position: absolute;
@@ -147,8 +142,8 @@ export class NpsaNavBar extends DDDSuper(LitElement) {
       <div class="nav-wrapper">
         <img class="logo" src="https://raw.githubusercontent.com/hyunseok1ee/sports-association-project/main/assets/npsa.png" alt="NPSA Logo" />
         <nav class="nav-links">
-          <a href="/">Home</a>
-          <a href="/about">About</a>
+          <a @click=${() => this._navigate('')}>Home</a>
+          <a @click=${() => this._navigate('about')}>About</a>
 
           <div class="dropdown">
             <button class="dropdown-trigger" @click=${() => this._toggleMenu("teams")}>
@@ -172,7 +167,7 @@ export class NpsaNavBar extends DDDSuper(LitElement) {
             </div>
           </div>
 
-          <a href="/join">Join</a>
+          <a @click=${() => this._navigate('join')}>Join</a>
         </nav>
       </div>
     `;

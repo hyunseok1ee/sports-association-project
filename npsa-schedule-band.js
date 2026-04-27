@@ -12,6 +12,7 @@ export class NpsaScheduleBand extends DDDSuper(LitElement) {
       ...super.properties,
       currentYear: { type: Number },
       currentMonth: { type: Number },
+      scheduleItems: { type: Array },
     };
   }
 
@@ -20,6 +21,27 @@ export class NpsaScheduleBand extends DDDSuper(LitElement) {
     const today = new Date();
     this.currentYear = today.getFullYear();
     this.currentMonth = today.getMonth();
+    this.scheduleItems = [];
+  }
+
+  connectedCallback() {
+    super.connectedCallback();
+    this._fetchSchedule();
+  }
+
+  async _fetchSchedule() {
+    const res = await fetch('/api/schedule.json');
+    const data = await res.json();
+    this.scheduleItems = data.items;
+  }
+
+  _getEventsForDay(day) {
+    return this.scheduleItems.filter(item => {
+      const date = new Date(item.date);
+      return date.getFullYear() === this.currentYear &&
+             date.getMonth() === this.currentMonth &&
+             date.getDate() === day;
+    });
   }
 
   _prevMonth() {
@@ -49,20 +71,20 @@ export class NpsaScheduleBand extends DDDSuper(LitElement) {
 
     const daysInPrevMonth = new Date(this.currentYear, this.currentMonth, 0).getDate();
     for (let i = startDayOfWeek - 1; i >= 0; i--) {
-        cells.push({ day: daysInPrevMonth - i, isCurrentMonth: false });
+      cells.push({ day: daysInPrevMonth - i, isCurrentMonth: false });
     }
 
     for (let d = 1; d <= daysInMonth; d++) {
-        cells.push({ day: d, isCurrentMonth: true });
+      cells.push({ day: d, isCurrentMonth: true });
     }
 
     let nextMonthDay = 1;
     while (cells.length < 35) {
-        cells.push({ day: nextMonthDay++, isCurrentMonth: false });
+      cells.push({ day: nextMonthDay++, isCurrentMonth: false });
     }
 
     return cells;
-}
+  }
 
   static get styles() {
     return [super.styles, css`
@@ -71,21 +93,18 @@ export class NpsaScheduleBand extends DDDSuper(LitElement) {
         padding: var(--ddd-spacing-6) var(--ddd-spacing-8);
         background-color: var(--ddd-theme-default-keystoneYellow);
       }
-
       .calendar-header {
         display: flex;
         justify-content: space-between;
         align-items: center;
         margin-bottom: var(--ddd-spacing-4);
       }
-
       .month-title {
         font-family: var(--ddd-font-navigation);
         font-size: var(--ddd-font-size-xl);
         font-weight: bold;
         color: var(--ddd-theme-default-nittanyNavy);
       }
-
       .nav-button {
         background: none;
         border: 2px solid var(--ddd-theme-default-nittanyNavy);
@@ -100,18 +119,15 @@ export class NpsaScheduleBand extends DDDSuper(LitElement) {
         align-items: center;
         justify-content: center;
       }
-
       .nav-button:hover {
         background-color: var(--ddd-theme-default-nittanyNavy);
         color: var(--ddd-theme-default-keystoneYellow);
       }
-
       .day-labels {
         display: grid;
         grid-template-columns: repeat(7, 1fr);
         margin-bottom: var(--ddd-spacing-1);
       }
-
       .day-label {
         font-family: var(--ddd-font-navigation);
         font-size: var(--ddd-font-size-s);
@@ -120,7 +136,6 @@ export class NpsaScheduleBand extends DDDSuper(LitElement) {
         text-align: center;
         padding: var(--ddd-spacing-1) 0;
       }
-
       .calendar-grid {
         display: grid;
         grid-template-columns: repeat(7, 1fr);
@@ -154,6 +169,7 @@ export class NpsaScheduleBand extends DDDSuper(LitElement) {
           <npsa-schedule-card
             .day=${cell.day}
             .isCurrentMonth=${cell.isCurrentMonth}
+            .events=${cell.isCurrentMonth ? this._getEventsForDay(cell.day) : []}
           ></npsa-schedule-card>
         `)}
       </div>

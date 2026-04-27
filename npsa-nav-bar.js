@@ -143,7 +143,6 @@ export class NpsaNavBar extends DDDSuper(LitElement) {
         <img class="logo" src="https://raw.githubusercontent.com/hyunseok1ee/sports-association-project/main/assets/npsa.png" alt="NPSA Logo" />
         <nav class="nav-links">
           <a href="#" @click=${() => this._navigate('')}>Home</a>
-          <a href="#" @click=${() => this._navigate('about')}>About</a>
 
           <div class="dropdown">
             <button class="dropdown-trigger" @click=${() => this._toggleMenu("teams")}>

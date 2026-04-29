@@ -10,12 +10,12 @@ export class NpsaAboutBand extends DDDSuper(LitElement) {
     return [super.styles, css`
       :host {
         display: block;
-        background-color: white;
+        background-color: light-dark(var(--ddd-theme-default-white), var(--ddd-theme-default-nittanyNavy));
         padding: var(--ddd-spacing-10) var(--ddd-spacing-8);
         text-align: center;
       }
       h2 {
-        color: var(--ddd-theme-default-nittanyNavy);
+        color: light-dark(var(--ddd-theme-default-nittanyNavy), var(--ddd-theme-default-white));
         font-family: var(--ddd-font-navigation);
         font-size: var(--ddd-font-size-xl);
         margin-bottom: var(--ddd-spacing-6);
@@ -31,17 +31,17 @@ export class NpsaAboutBand extends DDDSuper(LitElement) {
         align-items: flex-start;
         margin-bottom: var(--ddd-spacing-4);
         padding: var(--ddd-spacing-4);
-        border-left: 4px solid var(--ddd-theme-default-keystoneYellow);
+        border-left: 4px solid light-dark(var(--ddd-theme-default-keystoneYellow), var(--ddd-theme-default-roarGolden));
       }
       .rule-number {
-        color: var(--ddd-theme-default-keystoneYellow);
+        color: light-dark(var(--ddd-theme-default-keystoneYellow), var(--ddd-theme-default-roarGolden));
         font-family: var(--ddd-font-navigation);
         font-size: var(--ddd-font-size-xl);
         font-weight: bold;
         min-width: 40px;
       }
       .rule-text {
-        color: var(--ddd-theme-default-nittanyNavy);
+        color: light-dark(var(--ddd-theme-default-nittanyNavy), var(--ddd-theme-default-white));
         font-family: var(--ddd-font-navigation);
         font-size: var(--ddd-font-size-m);
         line-height: 1.6;

@@ -10,7 +10,7 @@ export class NpsaHeroBanner extends DDDSuper(LitElement) {
     return [super.styles, css`
       :host {
         display: block;
-        background-color: white;
+        background-color: light-dark(var(--ddd-theme-default-white), var(--ddd-theme-default-nittanyNavy));
         padding: var(--ddd-spacing-10) var(--ddd-spacing-8);
         text-align: center;
       }
@@ -19,13 +19,13 @@ export class NpsaHeroBanner extends DDDSuper(LitElement) {
         margin-bottom: var(--ddd-spacing-4);
       }
       h1 {
-        color: var(--ddd-theme-default-nittanyNavy);
+        color: light-dark(var(--ddd-theme-default-nittanyNavy), var(--ddd-theme-default-white));
         font-family: var(--ddd-font-navigation);
         font-size: var(--ddd-font-size-xl);
         margin-bottom: var(--ddd-spacing-4);
       }
       p {
-        color: var(--ddd-theme-default-nittanyNavy);
+        color: light-dark(var(--ddd-theme-default-nittanyNavy), var(--ddd-theme-default-white));
         font-family: var(--ddd-font-navigation);
         font-size: var(--ddd-font-size-m);
         max-width: 700px;

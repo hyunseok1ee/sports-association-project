@@ -10,12 +10,12 @@ export class NpsaFooter extends DDDSuper(LitElement) {
     return [super.styles, css`
       :host {
         display: block;
-        background-color: var(--ddd-theme-default-nittanyNavy);
+        background-color: light-dark(var(--ddd-theme-default-nittanyNavy), var(--ddd-theme-default-white));
         padding: var(--ddd-spacing-4) var(--ddd-spacing-8);
         text-align: center;
       }
       p {
-        color: white;
+        color: light-dark(var(--ddd-theme-default-white), var(--ddd-theme-default-nittanyNavy));
         font-family: var(--ddd-font-navigation);
         font-size: var(--ddd-font-size-s);
         margin: 0;

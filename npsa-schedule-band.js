@@ -91,7 +91,7 @@ export class NpsaScheduleBand extends DDDSuper(LitElement) {
       :host {
         display: block;
         padding: var(--ddd-spacing-6) var(--ddd-spacing-8);
-        background-color: var(--ddd-theme-default-keystoneYellow);
+        background-color: light-dark(var(--ddd-theme-default-keystoneYellow), var(--ddd-theme-default-roarGolden));
       }
       .calendar-header {
         display: flex;
@@ -103,12 +103,12 @@ export class NpsaScheduleBand extends DDDSuper(LitElement) {
         font-family: var(--ddd-font-navigation);
         font-size: var(--ddd-font-size-xl);
         font-weight: bold;
-        color: var(--ddd-theme-default-nittanyNavy);
+        color: light-dark(var(--ddd-theme-default-nittanyNavy), var(--ddd-theme-default-white));
       }
       .nav-button {
         background: none;
-        border: 2px solid var(--ddd-theme-default-nittanyNavy);
-        color: var(--ddd-theme-default-nittanyNavy);
+        border: 2px solid light-dark(var(--ddd-theme-default-nittanyNavy), var(--ddd-theme-default-white));
+        color: light-dark(var(--ddd-theme-default-nittanyNavy), var(--ddd-theme-default-white));
         font-size: var(--ddd-font-size-l);
         font-weight: bold;
         width: 36px;
@@ -120,8 +120,8 @@ export class NpsaScheduleBand extends DDDSuper(LitElement) {
         justify-content: center;
       }
       .nav-button:hover {
-        background-color: var(--ddd-theme-default-nittanyNavy);
-        color: var(--ddd-theme-default-keystoneYellow);
+        background-color: light-dark(var(--ddd-theme-default-nittanyNavy), var(--ddd-theme-default-white));
+        color: light-dark(var(--ddd-theme-default-keystoneYellow), var(--ddd-theme-default-roarGolden));
       }
       .day-labels {
         display: grid;
@@ -132,7 +132,7 @@ export class NpsaScheduleBand extends DDDSuper(LitElement) {
         font-family: var(--ddd-font-navigation);
         font-size: var(--ddd-font-size-s);
         font-weight: bold;
-        color: var(--ddd-theme-default-nittanyNavy);
+        color: light-dark(var(--ddd-theme-default-nittanyNavy), var(--ddd-theme-default-white));
         text-align: center;
         padding: var(--ddd-spacing-1) 0;
       }

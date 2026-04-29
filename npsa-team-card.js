@@ -10,7 +10,7 @@ export class NpsaTeamCard extends DDDSuper(LitElement) {
     return [super.styles, css`
       :host {
         display: block;
-        background-color: white;
+        background-color: light-dark(var(--ddd-theme-default-white), var(--ddd-theme-default-nittanyNavy));
         padding: var(--ddd-spacing-10) var(--ddd-spacing-8);
       }
       .team-header {
@@ -18,13 +18,13 @@ export class NpsaTeamCard extends DDDSuper(LitElement) {
         margin-bottom: var(--ddd-spacing-8);
       }
       h1 {
-        color: var(--ddd-theme-default-nittanyNavy);
+        color: light-dark(var(--ddd-theme-default-nittanyNavy), var(--ddd-theme-default-white));
         font-family: var(--ddd-font-navigation);
         font-size: var(--ddd-font-size-xxl);
         margin-bottom: var(--ddd-spacing-2);
       }
       .slogan {
-        color: var(--ddd-theme-default-keystoneYellow);
+        color: light-dark(var(--ddd-theme-default-keystoneYellow), var(--ddd-theme-default-roarGolden));
         font-family: var(--ddd-font-navigation);
         font-size: var(--ddd-font-size-l);
         font-style: italic;
@@ -37,8 +37,8 @@ export class NpsaTeamCard extends DDDSuper(LitElement) {
         flex-wrap: wrap;
       }
       .achievement-badge {
-        background-color: var(--ddd-theme-default-nittanyNavy);
-        color: var(--ddd-theme-default-keystoneYellow);
+        background-color: light-dark(var(--ddd-theme-default-nittanyNavy), var(--ddd-theme-default-white));
+        color: light-dark(var(--ddd-theme-default-keystoneYellow), var(--ddd-theme-default-roarGolden));
         font-family: var(--ddd-font-navigation);
         font-size: var(--ddd-font-size-s);
         padding: var(--ddd-spacing-2) var(--ddd-spacing-4);
@@ -46,7 +46,7 @@ export class NpsaTeamCard extends DDDSuper(LitElement) {
         font-weight: bold;
       }
       h2 {
-        color: var(--ddd-theme-default-nittanyNavy);
+        color: light-dark(var(--ddd-theme-default-nittanyNavy), var(--ddd-theme-default-white));
         font-family: var(--ddd-font-navigation);
         font-size: var(--ddd-font-size-xl);
         margin-bottom: var(--ddd-spacing-6);
@@ -67,17 +67,17 @@ export class NpsaTeamCard extends DDDSuper(LitElement) {
         height: 200px;
         object-fit: cover;
         border-radius: 50%;
-        border: 4px solid var(--ddd-theme-default-keystoneYellow);
+        border: 4px solid light-dark(var(--ddd-theme-default-keystoneYellow), var(--ddd-theme-default-roarGolden));
         margin-bottom: var(--ddd-spacing-3);
       }
       .member-name {
-        color: var(--ddd-theme-default-nittanyNavy);
+        color: light-dark(var(--ddd-theme-default-nittanyNavy), var(--ddd-theme-default-white));
         font-family: var(--ddd-font-navigation);
         font-size: var(--ddd-font-size-m);
         font-weight: bold;
       }
       .member-role {
-        color: var(--ddd-theme-default-keystoneYellow);
+        color: light-dark(var(--ddd-theme-default-keystoneYellow), var(--ddd-theme-default-roarGolden));
         font-family: var(--ddd-font-navigation);
         font-size: var(--ddd-font-size-s);
       }

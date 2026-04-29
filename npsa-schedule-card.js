@@ -28,7 +28,7 @@ export class NpsaScheduleCard extends DDDSuper(LitElement) {
         display: block;
       }
       .card {
-        background-color: white;
+        background-color: light-dark(var(--ddd-theme-default-white), var(--ddd-theme-default-nittanyNavy));
         min-height: 100px;
         padding: var(--ddd-spacing-2);
         box-sizing: border-box;
@@ -38,7 +38,7 @@ export class NpsaScheduleCard extends DDDSuper(LitElement) {
         font-family: var(--ddd-font-navigation);
         font-size: var(--ddd-font-size-m);
         font-weight: bold;
-        color: var(--ddd-theme-default-nittanyNavy);
+        color: light-dark(var(--ddd-theme-default-nittanyNavy), var(--ddd-theme-default-white));
         line-height: 1;
       }
       .card.other-month .day-number {
@@ -51,10 +51,10 @@ export class NpsaScheduleCard extends DDDSuper(LitElement) {
         font-family: var(--ddd-font-navigation);
         font-size: 10px;
         font-weight: bold;
-        color: white;
+        color: light-dark(var(--ddd-theme-default-white), var(--ddd-theme-default-nittanyNavy));
       }
       .event.game {
-        background-color: var(--ddd-theme-default-nittanyNavy);
+        background-color: light-dark(var(--ddd-theme-default-nittanyNavy), var(--ddd-theme-default-white));
       }
       .event.practice {
         background-color: var(--ddd-theme-default-original87Pink);

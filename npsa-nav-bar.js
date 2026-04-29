@@ -52,7 +52,7 @@ export class NpsaNavBar extends DDDSuper(LitElement) {
     return [super.styles, css`
       :host {
         display: block;
-        background-color: var(--ddd-theme-default-keystoneYellow);
+        background-color: light-dark(var(--ddd-theme-default-keystoneYellow), var(--ddd-theme-default-roarGolden));
         padding: var(--ddd-spacing-1) var(--ddd-spacing-8);
       }
       .nav-wrapper {
@@ -69,7 +69,7 @@ export class NpsaNavBar extends DDDSuper(LitElement) {
         align-items: center;
       }
       a {
-        color: var(--ddd-theme-default-nittanyNavy);
+        color: light-dark(var(--ddd-theme-default-nittanyNavy), var(--ddd-theme-default-white));
         text-decoration: none;
         font-family: var(--ddd-font-navigation);
         font-size: var(--ddd-font-size-l);
@@ -86,7 +86,7 @@ export class NpsaNavBar extends DDDSuper(LitElement) {
         background: none;
         border: none;
         cursor: pointer;
-        color: var(--ddd-theme-default-nittanyNavy);
+        color: light-dark(var(--ddd-theme-default-nittanyNavy), var(--ddd-theme-default-white));
         font-family: var(--ddd-font-navigation);
         font-size: var(--ddd-font-size-l);
         font-weight: bold;
@@ -111,10 +111,10 @@ export class NpsaNavBar extends DDDSuper(LitElement) {
         position: absolute;
         top: calc(100% + 8px);
         left: 0;
-        background-color: var(--ddd-theme-default-keystoneYellow);
-        border-top: 3px solid var(--ddd-theme-default-nittanyNavy);
+        background-color: light-dark(var(--ddd-theme-default-keystoneYellow), var(--ddd-theme-default-roarGolden));
+        border-top: 3px solid light-dark(var(--ddd-theme-default-nittanyNavy), var(--ddd-theme-default-white));
         min-width: 160px;
-        box-shadow: 0 4px 12px var(--ddd-theme-default-limestoneLight);
+        box-shadow: 0 4px 12px light-dark(var(--ddd-theme-default-limestoneLight), var(--ddd-theme-default-limestoneGray));
         z-index: 100;
         flex-direction: column;
       }
@@ -125,14 +125,14 @@ export class NpsaNavBar extends DDDSuper(LitElement) {
         padding: var(--ddd-spacing-3) var(--ddd-spacing-5);
         font-size: var(--ddd-font-size-m);
         white-space: nowrap;
-        border-bottom: 1px solid var(--ddd-theme-default-limestoneLight);
+        border-bottom: 1px solid light-dark(var(--ddd-theme-default-limestoneLight), var(--ddd-theme-default-limestoneGray));
       }
       .dropdown-menu a:last-child {
         border-bottom: none;
       }
       .dropdown-menu a:hover {
-        background-color: var(--ddd-theme-default-nittanyNavy);
-        color: var(--ddd-theme-default-keystoneYellow);
+        background-color: light-dark(var(--ddd-theme-default-nittanyNavy), var(--ddd-theme-default-white));
+        color: light-dark(var(--ddd-theme-default-keystoneYellow), var(--ddd-theme-default-roarGolden));
       }
     `];
   }

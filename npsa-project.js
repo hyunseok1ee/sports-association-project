@@ -58,15 +58,10 @@ export class NpsaProject extends DDDSuper(I18NMixin(LitElement)) {
         background-color: var(--ddd-theme-accent);
         font-family: var(--ddd-font-navigation);
       }
-      .wrapper {
-        margin: var(--ddd-spacing-2);
-        padding: var(--ddd-spacing-4);
-      }
-      h3 span {
-        font-size: var(--sports-association-project-label-font-size, var(--ddd-font-size-s));
-      }
     `];
   }
+
+  
 
   _renderPage() {
   switch(this.page) {
@@ -85,7 +80,8 @@ export class NpsaProject extends DDDSuper(I18NMixin(LitElement)) {
   // Lit render the HTML
   render() {
     return html`
-      <npsa-nav-bar @nav-changed=${(e) => this.page = e.detail.slug}></npsa-nav-bar>
+      <npsa-nav-bar
+        @nav-changed=${(e) => this.page = e.detail.slug}></npsa-nav-bar>
       <main>
         ${this._renderPage()}
         <npsa-stat-counter></npsa-stat-counter>

@@ -1,5 +1,6 @@
 import { LitElement, html, css } from "lit";
 import { DDDSuper } from "@haxtheweb/d-d-d/d-d-d.js";
+import './npsa-member-card.js';
 
 export class NpsaTeamCard extends DDDSuper(LitElement) {
   static get tag() {
@@ -99,31 +100,11 @@ export class NpsaTeamCard extends DDDSuper(LitElement) {
 
       <h2>Meet the Team</h2>
       <div class="members">
-        <div class="member-card">
-          <img src="https://raw.githubusercontent.com/hyunseok1ee/sports-association-project/main/assets/TEAM_A_1.png" alt="James Carter" />
-          <p class="member-name">James Carter</p>
-          <p class="member-role">Team Captain</p>
-        </div>
-        <div class="member-card">
-          <img src="https://raw.githubusercontent.com/hyunseok1ee/sports-association-project/main/assets/TEAM_A_2.png" alt="Emily Rodriguez" />
-          <p class="member-name">Emily Rodriguez</p>
-          <p class="member-role">Vice Captain</p>
-        </div>
-        <div class="member-card">
-          <img src="https://raw.githubusercontent.com/hyunseok1ee/sports-association-project/main/assets/TEAM_A_3.png" alt="Margaret Chen" />
-          <p class="member-name">Margaret Chen</p>
-          <p class="member-role">Senior Sharpener</p>
-        </div>
-        <div class="member-card">
-          <img src="https://raw.githubusercontent.com/hyunseok1ee/sports-association-project/main/assets/TEAM_A_4.png" alt="Kevin Park" />
-          <p class="member-name">Kevin Park</p>
-          <p class="member-role">Sharpener</p>
-        </div>
-        <div class="member-card">
-          <img src="https://raw.githubusercontent.com/hyunseok1ee/sports-association-project/main/assets/TEAM_A_5.png" alt="Robert Williams" />
-          <p class="member-name">Robert Williams</p>
-          <p class="member-role">Sharpener</p>
-        </div>
+        <npsa-member-card name="James Carter" position="Team Captain" image="https://raw.githubusercontent.com/hyunseok1ee/sports-association-project/main/assets/TEAM_A_1.png"></npsa-member-card>
+        <npsa-member-card name="Emily Rodriguez" position="Vice Captain" image="https://raw.githubusercontent.com/hyunseok1ee/sports-association-project/main/assets/TEAM_A_2.png"></npsa-member-card>
+        <npsa-member-card name="Margaret Chen" position="Senior Sharpener" image="https://raw.githubusercontent.com/hyunseok1ee/sports-association-project/main/assets/TEAM_A_3.png"></npsa-member-card>
+        <npsa-member-card name="Kevin Park" position="Sharpener" image="https://raw.githubusercontent.com/hyunseok1ee/sports-association-project/main/assets/TEAM_A_4.png"></npsa-member-card>
+        <npsa-member-card name="Robert Williams" position="Sharpener" image="https://raw.githubusercontent.com/hyunseok1ee/sports-association-project/main/assets/TEAM_A_5.png"></npsa-member-card>
       </div>
     `;
   }

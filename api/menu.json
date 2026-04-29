@@ -30,7 +30,7 @@
     {
       "id": "item-3",
       "indent": "2",
-      "location": "/teams/team-a.full",
+      "location": "npsa-team-band.js",
       "slug": "team-a",
       "order": "0",
       "parent": "item-2",
@@ -41,7 +41,7 @@
     {
       "id": "item-4",
       "indent": "2",
-      "location": "/teams/team-b.js",
+      "location": "npsa-team-band.js",
       "slug": "team-b",
       "order": "1",
       "parent": "item-2",
@@ -52,7 +52,7 @@
     {
       "id": "item-5",
       "indent": "2",
-      "location": "/teams/team-c.js",
+      "location": "npsa-team-band.js",
       "slug": "team-c",
       "order": "2",
       "parent": "item-2",
